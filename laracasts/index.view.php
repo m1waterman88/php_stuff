@@ -35,23 +35,23 @@
 
         <hr>
 
-        <section class="tasks">
+        <section class="todos">
             <ul>
                 <li>
                     <strong>Name: </strong>
-                    <?= $task['title']; ?>
+                    <?= $todo['title']; ?>
                 </li>
                 <li>
                     <strong>Due Date: </strong>
-                    <?= $task['due']; ?>
+                    <?= $todo['due']; ?>
                 </li>
                 <li>
                     <strong>Person Responsible: </strong>
-                    <?= $task['assigned_to']; ?>
+                    <?= $todo['assigned_to']; ?>
                 </li>
                 <li>
                     <strong>Status: </strong>
-                    <?php if ($task['completed']) : ?>
+                    <?php if ($todo['completed']) : ?>
                         <span class="incomplete">&#10008;</span>
                     <?php else : ?>
                         &#9989;
@@ -62,7 +62,18 @@
 
         <hr>
 
-        <section class="">
+        <section class="tasks-class">
+            <ul>
+                <?php foreach ($tasks as $task): ?>
+                    <li>
+                        <?php if ($task->isComplete()): ?>
+                            <strike><?= $task->description(); ?></strike>
+                        <?php else: ?>
+                            <?= $task->description(); ?>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </section>
 
         <hr>
