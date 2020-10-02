@@ -61,7 +61,7 @@
         </section>
 
         <hr>
-
+<?php /*
         <section class="tasks-class">
             <ul>
                 <?php foreach ($tasks as $task): ?>
@@ -75,7 +75,7 @@
                 <?php endforeach; ?>
             </ul>
         </section>
-
+*/ ?>
         <hr>
 
         <section class="">
