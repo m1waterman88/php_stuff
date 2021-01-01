@@ -2,8 +2,8 @@
 
 $database = require 'core/bootstrap.php';
 
-
-$greeting = "Hello, " . htmlspecialchars($_GET['name']) . "!";
+$name = htmlspecialchars($_GET['name']);
+$greeting = "Hello, {$name}!";
 
 
 // $router = new Router;
